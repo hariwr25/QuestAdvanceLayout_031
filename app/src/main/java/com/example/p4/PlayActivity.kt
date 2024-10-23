@@ -33,7 +33,7 @@ fun PlayActivity(
         modifier = modifier.fillMaxSize()
     ) {
         SectionHeader()
-        Spacer(modifier = Modifier.padding(20.dp))
+        Spacer(modifier = Modifier.padding(8.dp))
         Text(text = "Kepada Yth:", Modifier.padding(start = 15.dp))
         Text(text = "KAPRODI", Modifier.padding(start = 15.dp)
         )
@@ -53,50 +53,49 @@ fun PlayActivity(
 }
 
 @Composable
-fun SectionHeader() {
+fun SectionHeader(){
     Box(modifier = Modifier
         .fillMaxWidth()
         .background(color = Color.DarkGray)) {
-        Row (Modifier.padding(all = 10.dp)
-        ){
+        Row {
             Box(contentAlignment = Alignment.BottomEnd) {
                 Image(
-                    painter = painterResource(
-                        id = R.drawable.umy
-                    ),
-                    contentDescription = "", Modifier
-                        .size(100.dp).clip(shape = CircleShape)
-                )
-                Icon(Icons.Filled.Check,
+                    painter = painterResource(id = R.drawable.umy),
                     contentDescription = "",
-                    Modifier.padding(end = 10.dp).size(25.dp),
+                    Modifier.size(100.dp).clip(shape = CircleShape) //agar permukaan gambar menjadi bulat
+                )
+                Icon(
+                    Icons.Filled.Check, //untuk icon
+                    contentDescription = "", // deskripsi icon
+                    Modifier
+                        .padding(end = 13.dp)
+                        .size(25.dp),
                     tint = Color.Red,
                 )
             }
             Column (Modifier.padding(15.dp)){
-                Text(text ="Teknologi Informasi",
-                    color = Color.White
-                )
-                Spacer(Modifier.padding(3.dp))
-                Text(
-                    text = "Universitas Muhammadiyah Yogyakarta",
+                Text(text = "Teknologi Informasi",
+                    color = Color.White)
+                Spacer(Modifier.padding(3.dp)) // memberi jarak atau spasi antar baris
+                Text(text = "Universitas Muhammadiyah Yogyakarta",
                     color = Color.White)
             }
         }
     }
 }
 
+
 @Composable
 fun MainSection(judulParam:String, isiParam:String) {
     Column(
 
         horizontalAlignment = Alignment.Start,
-        modifier = Modifier.padding(20.dp)
+
     ) {
         Row (
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(3.dp),
+                .padding(8.dp),
             horizontalArrangement = Arrangement.SpaceBetween
             ){
             Text(text = judulParam, modifier = Modifier.weight(0.8f))

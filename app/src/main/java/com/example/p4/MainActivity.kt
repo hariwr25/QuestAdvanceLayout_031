@@ -19,11 +19,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             P4Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                        PlayActivity(
+                            modifier = Modifier.padding(innerPadding)
+                        )
                 }
             }
         }
